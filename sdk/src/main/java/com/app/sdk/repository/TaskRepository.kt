@@ -14,7 +14,7 @@ class TaskRepository(applicationContext: Context) {
         it.map { entity -> Task(entity) }
     }
 
-    suspend fun save(task: Task) = taskDao.save(TaskEntity(task))
+    suspend fun save(description: String) = taskDao.save(TaskEntity(description))
 
     suspend fun update(task: Task) = taskDao.update(TaskEntity(task))
 
