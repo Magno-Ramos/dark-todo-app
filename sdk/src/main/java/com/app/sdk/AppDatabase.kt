@@ -12,7 +12,17 @@ internal abstract class AppDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao
 
     companion object {
-        fun getInstance(context: Context) =
+        fun buildDatabase(context: Context) =
             Room.databaseBuilder(context, AppDatabase::class.java, "app-database").build()
+    }
+}
+
+internal object AppDatabaseProvider {
+    private var appDatabase: AppDatabase? = null
+    fun getInstance(context: Context): AppDatabase {
+        if (appDatabase == null) {
+            appDatabase = AppDatabase.buildDatabase(context)
+        }
+        return appDatabase!!
     }
 }
