@@ -1,25 +1,39 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/colorPrimary</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="colorPrimary">#2962FF</item>
+        <item name="colorPrimaryVariant">#0039CB</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#2962FF</item>
+        <item name="colorSecondaryVariant">#0039CB</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorError">#F44336</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorSurface">#232323</item>
+        <item name="colorOnSurface">#343434</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="colorOnBackground">#F44336</item>
+
+        <item name="materialButtonStyle">@style/AppButton</item>
     </style>
 
-    <style name="HeaderTextView" parent="Widget.AppCompat.TextView">
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="HeaderTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:padding">16dp</item>
     </style>
 
-    <style name="ItemTextView" parent="Widget.AppCompat.TextView">
+    <style name="ItemTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="EmptyStateTextView" parent="Widget.AppCompat.TextView">
+    <style name="EmptyStateTextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">#dddddd</item>
     </style>

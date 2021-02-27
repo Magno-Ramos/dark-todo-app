@@ -3,4 +3,7 @@
     <string name="tasks">Tasks</string>
     <string name="no_tasks_added">No tasks added</string>
     <string name="save">Save</string>
+    <string name="continue_str">Continue</string>
+    <string name="intro_description">This smart tool is designed to help you better manage your tasks</string>
+    <string name="intro_title">Smart Task Management</string>
 </resources>

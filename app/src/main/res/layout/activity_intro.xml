@@ -18,25 +18,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_intro_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Smart Task Management"
+        android:text="@string/intro_title"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/txt_intro_subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_intro_subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="56dp"
-        android:text="This smart tool is designed to help you better manage your tasks"
+        android:text="@string/intro_description"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/btn_continue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +46,7 @@
         android:id="@+id/btn_continue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_intro_button"
-        android:text="Continue"
+        android:text="@string/continue_str"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

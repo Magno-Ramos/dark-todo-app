@@ -1,56 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt_current_date"
-        style="@style/HeaderTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/btn_date"
-        app:layout_constraintEnd_toStartOf="@id/btn_date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btn_date"
-        tools:text="Segunda-Feira, 28" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/btn_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="8dp"
-        android:src="@drawable/ic_round_date_range_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_current_date"
+            style="@style/HeaderTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/btn_date"
+            app:layout_constraintEnd_toStartOf="@id/btn_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_date"
+            tools:text="Segunda-Feira, 28" />
 
-    <fragment
-        android:id="@+id/task_fragment_container"
-        android:layout_width="0dp"
-        android:name="com.app.darktodoapp.tasks.TaskListFragment"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_current_date"
-        tools:layout="@layout/fragment_task_list" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_round_date_range_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:padding="16dp"
-        android:src="@drawable/ic_round_add_24"
-        android:backgroundTint="@color/colorAccent"
-        app:borderWidth="0dp"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:rippleColor="@color/fabRippleColor" />
+        <fragment
+            android:id="@+id/task_fragment_container"
+            android:name="com.app.darktodoapp.tasks.TaskListFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_current_date"
+            tools:layout="@layout/fragment_task_list" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:padding="16dp"
+            android:src="@drawable/ic_round_add_24"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
