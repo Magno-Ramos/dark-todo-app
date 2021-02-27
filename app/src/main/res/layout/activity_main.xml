@@ -35,7 +35,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_current_date" />
+        app:layout_constraintTop_toBottomOf="@id/txt_current_date"
+        tools:layout="@layout/fragment_task_list" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_plus"
@@ -44,6 +45,7 @@
         android:layout_margin="24dp"
         android:padding="16dp"
         android:src="@drawable/ic_round_add_24"
+        android:backgroundTint="@color/colorAccent"
         app:borderWidth="0dp"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
