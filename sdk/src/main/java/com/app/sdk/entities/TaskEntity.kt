@@ -17,4 +17,10 @@ data class TaskEntity(
         complete = task.complete,
         created = task.created
     )
+    constructor(description: String): this(
+        id = 0,
+        description = description,
+        complete = false,
+        created = System.currentTimeMillis()
+    )
 }
