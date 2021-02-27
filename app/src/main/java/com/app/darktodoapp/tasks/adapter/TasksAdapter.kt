@@ -1,4 +1,4 @@
-package com.app.darktodoapp.tasks
+package com.app.darktodoapp.tasks.adapter
 
 import android.text.SpannableStringBuilder
 import android.text.style.StrikethroughSpan
@@ -12,14 +12,18 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.darktodoapp.R
-import com.app.darktodoapp.models.Task
+import com.app.sdk.models.Task
 
-class TasksAdapter : ListAdapter<Task, TasksAdapter.TaskAdapterViewHolder>(DIFF_CALLBACK) {
+class TasksAdapter : ListAdapter<Task, TasksAdapter.TaskAdapterViewHolder>(
+    DIFF_CALLBACK
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskAdapterViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_view_task, parent, false)
-        return TaskAdapterViewHolder(view)
+        return TaskAdapterViewHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: TaskAdapterViewHolder, position: Int) {
