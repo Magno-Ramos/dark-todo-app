@@ -20,5 +20,8 @@ class TaskListFragment : Fragment(R.layout.fragment_task_list) {
             layoutManager = LinearLayoutManager(context)
             adapter = tasksAdapter
         }
+
+        val repository = TaskRepository(view.context.applicationContext)
+        repository.getAll().observe(viewLifecycleOwner, tasksAdapter::submitList)
     }
 }
