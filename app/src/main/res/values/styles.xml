@@ -10,7 +10,7 @@
         <item name="colorOnSecondary">#FFFFFF</item>
         <item name="colorError">#F44336</item>
         <item name="colorOnError">#FFFFFF</item>
-        <item name="colorSurface">#232323</item>
+        <item name="colorSurface">#ddd</item>
         <item name="colorOnSurface">#343434</item>
         <item name="android:colorBackground">@color/colorPrimary</item>
         <item name="colorOnBackground">#F44336</item>
