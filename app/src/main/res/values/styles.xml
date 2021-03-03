@@ -10,17 +10,28 @@
         <item name="colorOnSecondary">#FFFFFF</item>
         <item name="colorError">#F44336</item>
         <item name="colorOnError">#FFFFFF</item>
-        <item name="colorSurface">#ddd</item>
+        <item name="colorSurface">#333333</item>
         <item name="colorOnSurface">#343434</item>
         <item name="android:colorBackground">@color/colorPrimary</item>
         <item name="colorOnBackground">#F44336</item>
 
         <item name="materialButtonStyle">@style/AppButton</item>
+        <item name="checkboxStyle">@style/AppCheckBox</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
     </style>
 
     <style name="AppButton" parent="Widget.MaterialComponents.Button">
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="AppCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="colorSurface">#999999</item>
     </style>
 
     <style name="HeaderTextView" parent="Widget.MaterialComponents.TextView">

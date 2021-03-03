@@ -6,4 +6,5 @@
     <string name="continue_str">Continue</string>
     <string name="intro_description">This smart tool is designed to help you better manage your tasks</string>
     <string name="intro_title">Smart Task Management</string>
+    <string name="enter_your_task_here">Enter your task here</string>
 </resources>

@@ -17,6 +17,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_task_description"
             android:layout_width="match_parent"
+            android:hint="@string/enter_your_task_here"
             android:layout_height="match_parent"
             android:imeOptions="actionDone"
             android:inputType="textCapSentences" />

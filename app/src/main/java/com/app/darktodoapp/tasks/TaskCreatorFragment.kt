@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class TaskCreatorFragment : BottomSheetDialogFragment() {
 
-    override fun getTheme(): Int = R.style.Theme_MaterialComponents_BottomSheetDialog
+    override fun getTheme(): Int = R.style.BottomSheetStyle
 
     override fun onCreateView(
         inflater: LayoutInflater,
