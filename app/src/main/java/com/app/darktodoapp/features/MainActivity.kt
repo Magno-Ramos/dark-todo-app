@@ -1,9 +1,10 @@
-package com.app.darktodoapp
+package com.app.darktodoapp.features
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.app.darktodoapp.R
 import com.app.darktodoapp.helper.currentFormattedDate
-import com.app.darktodoapp.tasks.TaskCreatorFragment
+import com.app.darktodoapp.features.tasks.TaskCreatorFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {

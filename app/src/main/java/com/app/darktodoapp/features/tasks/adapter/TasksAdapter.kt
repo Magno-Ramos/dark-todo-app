@@ -1,4 +1,4 @@
-package com.app.darktodoapp.tasks.adapter
+package com.app.darktodoapp.features.tasks.adapter
 
 import android.text.SpannableStringBuilder
 import android.text.style.StrikethroughSpan

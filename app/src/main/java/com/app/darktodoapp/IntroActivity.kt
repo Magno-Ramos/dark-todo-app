@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.edit
+import com.app.darktodoapp.features.MainActivity
 import kotlinx.android.synthetic.main.activity_intro.*
 
 const val INTRO_DISPLAYED_KEY = "INTRO_DISPLAYED_KEY"

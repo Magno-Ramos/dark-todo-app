@@ -1,4 +1,4 @@
-package com.app.darktodoapp.tasks
+package com.app.darktodoapp.features.tasks
 
 import android.os.Bundle
 import android.view.ContextThemeWrapper

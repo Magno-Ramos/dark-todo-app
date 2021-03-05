@@ -1,4 +1,4 @@
-package com.app.darktodoapp.tasks
+package com.app.darktodoapp.features.tasks
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.darktodoapp.R
 import com.app.darktodoapp.helper.observe
 import com.app.darktodoapp.helper.snack
-import com.app.darktodoapp.tasks.adapter.TasksAdapter
+import com.app.darktodoapp.features.tasks.adapter.TasksAdapter
 import com.app.sdk.models.Task
 import com.app.sdk.repository.TaskRepository
 import kotlinx.android.synthetic.main.fragment_task_list.*

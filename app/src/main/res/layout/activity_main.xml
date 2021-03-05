@@ -5,7 +5,7 @@
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".features.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
 
         <fragment
             android:id="@+id/task_fragment_container"
-            android:name="com.app.darktodoapp.tasks.TaskListFragment"
+            android:name="com.app.darktodoapp.features.tasks.TaskListFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
