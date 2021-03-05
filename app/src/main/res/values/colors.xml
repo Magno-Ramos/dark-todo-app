@@ -3,7 +3,7 @@
     <color name="colorPrimary">#17171a</color>
     <color name="colorPrimaryDark">#14141a</color>
     <color name="colorAccent">#336ce1</color>
-    <color name="colorWhite">#fff</color>
-
+    <color name="colorWhite">#fafafa</color>
+    <color name="colorDanger">#f44336</color>
     <color name="fabRippleColor">#116ce1</color>
 </resources>
