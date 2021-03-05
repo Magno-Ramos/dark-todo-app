@@ -16,6 +16,8 @@ class TaskRepository(applicationContext: Context) {
 
     suspend fun save(description: String) = taskDao.save(TaskEntity(description))
 
+    suspend fun save(task: Task) = taskDao.save(TaskEntity(task))
+
     suspend fun update(task: Task) = taskDao.update(TaskEntity(task))
 
     suspend fun delete(task: Task) = taskDao.delete(TaskEntity(task))
