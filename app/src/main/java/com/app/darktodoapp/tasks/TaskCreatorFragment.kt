@@ -29,6 +29,7 @@ class TaskCreatorFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val repository = TaskRepository(view.context.applicationContext)
+        edt_task_description.requestFocus()
 
         btn_save.setOnClickListener {
             val text = edt_task_description.text
