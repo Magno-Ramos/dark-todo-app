@@ -22,7 +22,7 @@ class TaskDatabaseTest {
     @Before
     fun createDb() {
         val context = ApplicationProvider.getApplicationContext<Context>()
-        db = Room.databaseBuilder(context, AppDatabase::class.java, "app-database").build()
+        db = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         taskDao = db.taskDao()
     }
 
