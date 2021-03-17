@@ -10,7 +10,6 @@ import com.app.darktodoapp.customview.PieProgress
 import com.app.darktodoapp.customview.percentOf
 import com.app.darktodoapp.helper.inflate
 import com.app.sdk.entities.ProjectWithTasksEntity
-import kotlin.random.Random
 
 class ProjectAdapter :
     ListAdapter<ProjectWithTasksEntity, ProjectAdapter.ProjectViewModel>(ProjectDiffCallback()) {
