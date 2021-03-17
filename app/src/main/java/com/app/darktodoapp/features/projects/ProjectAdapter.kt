@@ -10,6 +10,7 @@ import com.app.darktodoapp.customview.PieProgress
 import com.app.darktodoapp.customview.percentOf
 import com.app.darktodoapp.helper.inflate
 import com.app.sdk.entities.ProjectWithTasksEntity
+import com.app.sdk.models.Task
 
 class ProjectAdapter :
     ListAdapter<ProjectWithTasksEntity, ProjectAdapter.ProjectViewModel>(ProjectDiffCallback()) {
@@ -40,13 +41,23 @@ class ProjectAdapter :
 
         fun bindView(projectEntity: ProjectWithTasksEntity) {
             val tasksCount = projectEntity.tasks.size
-            val completedCount = projectEntity.tasks.count { it.complete }
 
             txtTitle.text = projectEntity.projectEntity.title
-            txtSubtitle.text = itemView.resources.getQuantityString(R.plurals.tasks_count, tasksCount, tasksCount)
+            txtSubtitle.text =
+                itemView.resources.getQuantityString(R.plurals.tasks_count, tasksCount, tasksCount)
 
-            val completePercent = tasksCount.percentOf(completedCount)
-            pieProgress.setPercentage(completePercent.toFloat())
+            updateProgress(projectEntity.tasks.map(::Task))
+        }
+
+        fun updateProgress(tasks: List<Task>) {
+            if (tasks.isEmpty()) {
+                pieProgress.setPercentage(0f)
+            } else {
+                val tasksCount = tasks.size
+                val completedCount = tasks.count { it.complete }
+                val completePercent = tasksCount.percentOf(completedCount)
+                pieProgress.setPercentage(completePercent.toFloat())
+            }
         }
     }
 }
@@ -61,6 +72,5 @@ private class ProjectDiffCallback : DiffUtil.ItemCallback<ProjectWithTasksEntity
     override fun areContentsTheSame(
         oldItem: ProjectWithTasksEntity,
         newItem: ProjectWithTasksEntity
-    ): Boolean =
-        oldItem == newItem
+    ): Boolean = oldItem.projectEntity == newItem.projectEntity
 }

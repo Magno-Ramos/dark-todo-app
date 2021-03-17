@@ -22,9 +22,9 @@ class PieProgress @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private var oldAngle: Float = 0f
+    private var oldAngle: Float = 0.0f
 
-    var currentAngle: Float = 0f
+    var currentAngle: Float = 0.0f
         private set
 
     var currentPercentage = 0f
@@ -60,7 +60,7 @@ class PieProgress @JvmOverloads constructor(
                 R.styleable.PieProgress_color,
                 context.getCompatColor(R.color.colorAccent)
             ).run(::setColor)
-            getFloat(R.styleable.PieProgress_percentage, 10f).run(::setPercentage)
+            getFloat(R.styleable.PieProgress_percentage, 0.0f).run(::setPercentage)
             recycle()
         }
 
@@ -123,10 +123,12 @@ class PieProgress @JvmOverloads constructor(
     }
 
     fun setPercentage(percentage: Float) {
-        val percentValue = if (percentage > 100f) 100f else percentage
-        oldAngle = currentAngle
-        currentAngle = MAX_ANGLE.percent(percentValue).toFloat()
-        startAnimation(oldAngle, currentAngle)
+        if (percentage.isNaN().not()) {
+            val percentValue = if (percentage > 100f) 100f else percentage
+            oldAngle = currentAngle
+            currentAngle = MAX_ANGLE.percent(percentValue).toFloat()
+            startAnimation(oldAngle, currentAngle)
+        }
     }
 
     companion object {

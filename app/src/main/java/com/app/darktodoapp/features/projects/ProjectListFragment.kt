@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.app.darktodoapp.R
 import com.app.darktodoapp.common.GridSpaceItemDecoration
 import com.app.darktodoapp.helper.observe
+import com.app.sdk.models.Task
 import com.app.sdk.repository.ProjectRepository
 import kotlinx.android.synthetic.main.fragment_project_list.*
 
@@ -25,6 +26,10 @@ class ProjectListFragment : Fragment(R.layout.fragment_project_list) {
         val repo = ProjectRepository(view.context.applicationContext)
         repo.allProjectsWithTasks().observe(viewLifecycleOwner) {
             projectsAdapter.submitList(it)
+            it.forEachIndexed { index, item ->
+                val holder = recycler_projects.findViewHolderForAdapterPosition(index) as? ProjectAdapter.ProjectViewModel
+                holder?.updateProgress(item.tasks.map(::Task))
+            }
         }
 
         projectsAdapter.projectClickListener = { projectId ->
