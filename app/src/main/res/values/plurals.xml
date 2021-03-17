@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="tasks_count">
+        <item quantity="one">%d tarefa</item>
+        <item quantity="other">%d tarefas</item>
+    </plurals>
+
+    <plurals name="project_task_details">
+        <item quantity="zero">%d tarefa</item>
+        <item quantity="one">%d tarefa</item>
+        <item quantity="other">%d tarefas and %d concluidas</item>
+    </plurals>
+</resources>
