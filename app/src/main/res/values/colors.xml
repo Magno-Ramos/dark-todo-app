@@ -6,4 +6,5 @@
     <color name="colorWhite">#fafafa</color>
     <color name="colorDanger">#f44336</color>
     <color name="fabRippleColor">#116ce1</color>
+    <color name="project_pie_progress_color">#fe784c</color>
 </resources>

@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">Dark To Do App</string>
-    <string name="tasks">Tasks</string>
-    <string name="no_tasks_added">No tasks added</string>
-    <string name="save">Save</string>
-    <string name="continue_str">Continue</string>
-    <string name="intro_description">This smart tool is designed to help you better manage your tasks</string>
-    <string name="intro_title">Smart Task Management</string>
-    <string name="enter_your_task_here">Enter your task here</string>
-    <string name="task_delete_message">Task has been deleted</string>
-    <string name="undo">UNDO</string>
+    <string name="tasks">Tarefas</string>
+    <string name="no_tasks_added">Nenhuma tarefa adicionada</string>
+    <string name="save">Salvar</string>
+    <string name="continue_str">Continuar</string>
+    <string name="intro_description">Esta ferramenta inteligente foi projetada para ajudá-lo a gerenciar melhor suas tarefas</string>
+    <string name="intro_title">Gerenciamento Inteligente de Tarefas</string>
+    <string name="enter_your_task_here">Digite sua tarefa</string>
+    <string name="enter_your_project_name">Digite o nome do projeto</string>
+    <string name="task_delete_message">Tarefa excluida com sucesso</string>
+    <string name="undo">DESFAZER</string>
+    <string name="label_empty" />
+    <string name="new_task">Nova tarefa</string>
+    <string name="your_projects">Seus projetos</string>
+    <string name="new_project">Novo projeto</string>
 </resources>

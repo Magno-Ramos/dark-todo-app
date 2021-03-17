@@ -9,6 +9,9 @@ internal interface TaskDao {
     @Query("SELECT * FROM TaskEntity")
     fun getAll(): LiveData<List<TaskEntity>>
 
+    @Query("SELECT * FROM TaskEntity WHERE projectId = :projectId")
+    fun getAllFromProject(projectId: Int): LiveData<List<TaskEntity>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun save(task: TaskEntity)
 

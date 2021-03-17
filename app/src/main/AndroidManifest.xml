@@ -12,10 +12,16 @@
         <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.MainActivity" />
+        <activity
+            android:name=".features.home.MainActivity"
+            android:label="@string/label_empty" />
+        <activity
+            android:name=".features.projects.ProjectDetailActivity"
+            android:label="@string/label_empty" />
     </application>
 
 </manifest>
