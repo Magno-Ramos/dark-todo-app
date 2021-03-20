@@ -24,20 +24,20 @@
                 android:id="@+id/txt_current_date"
                 style="@style/TextAppearance.MaterialComponents.Headline5"
                 android:layout_width="match_parent"
-                android:padding="16dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:padding="@dimen/spacing_medium"
                 tools:text="Segunda-Feira, 28" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/spacing_medium"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:visibility="gone"
+                android:padding="@dimen/spacing_small"
                 android:src="@drawable/ic_round_date_range_24"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,8 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="24dp"
-        android:padding="16dp"
+        android:layout_margin="@dimen/spacing_high"
+        android:padding="@dimen/spacing_medium"
         android:src="@drawable/ic_round_add_24"
         app:borderWidth="0dp"
         app:fabSize="normal"
