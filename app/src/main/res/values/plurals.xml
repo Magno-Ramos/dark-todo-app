@@ -8,6 +8,6 @@
     <plurals name="project_task_details">
         <item quantity="zero">%d tarefa</item>
         <item quantity="one">%d tarefa</item>
-        <item quantity="other">%d tarefas and %d concluidas</item>
+        <item quantity="other">%d tarefas e %d concluidas</item>
     </plurals>
 </resources>
