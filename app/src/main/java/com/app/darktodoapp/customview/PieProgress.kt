@@ -56,10 +56,7 @@ class PieProgress @JvmOverloads constructor(
             strokeWidth = getDimension(R.styleable.PieProgress_strokeWidth, DEFAULT_STROKE_WIDTH)
             strokeMargin = getDimension(R.styleable.PieProgress_strokeMargin, DEFAULT_STROKE_MARGIN)
 
-            getColor(
-                R.styleable.PieProgress_color,
-                context.getCompatColor(R.color.colorAccent)
-            ).run(::setColor)
+            getColor(R.styleable.PieProgress_color, Color.BLUE).run(::setColor)
             getFloat(R.styleable.PieProgress_percentage, 0.0f).run(::setPercentage)
             recycle()
         }
@@ -70,16 +67,16 @@ class PieProgress @JvmOverloads constructor(
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        val pieLeft = strokeMargin
-        val pieTop = strokeMargin
-        val pieRight = w.toFloat() - strokeMargin
-        val pieBottom = h.toFloat() - strokeMargin
+        val pieLeft = strokeMargin + strokeWidth
+        val pieTop = strokeMargin + strokeWidth
+        val pieRight = w.toFloat() - strokeMargin - strokeWidth
+        val pieBottom = h.toFloat() - strokeMargin - strokeWidth
 
         pieRectF.set(pieLeft, pieTop, pieRight, pieBottom)
 
         strokeX = ((pieLeft + pieRight) / 2)
-        strokeY = (pieTop + pieBottom) / 2
-        strokeRadius = (w / 2).toFloat() - strokeWidth
+        strokeY = ((pieTop + pieBottom) / 2)
+        strokeRadius = (w - strokeWidth) / 2
     }
 
     override fun onDraw(canvas: Canvas?) {

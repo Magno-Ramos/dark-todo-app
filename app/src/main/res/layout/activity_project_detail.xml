@@ -50,7 +50,7 @@
             app:color="@color/project_pie_progress_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/txt_project_name"
-            app:strokeMargin="@dimen/spacing_small"
+            app:strokeMargin="5dp"
             app:strokeWidth="3dp" />
 
 
