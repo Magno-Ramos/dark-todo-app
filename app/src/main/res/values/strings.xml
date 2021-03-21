@@ -14,4 +14,8 @@
     <string name="new_task">Nova tarefa</string>
     <string name="your_projects">Seus projetos</string>
     <string name="new_project">Novo projeto</string>
+    <string name="delete_project">Excluir projeto</string>
+    <string name="delete_project_confirmation_message">Deseja realmente excluir este projeto ? todas as tarefas serão perdidas</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Excluir</string>
 </resources>

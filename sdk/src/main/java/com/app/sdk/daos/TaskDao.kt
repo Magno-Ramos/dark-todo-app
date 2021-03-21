@@ -21,6 +21,9 @@ internal interface TaskDao {
     @Delete
     suspend fun delete(task: TaskEntity)
 
+    @Query("DELETE FROM TaskEntity WHERE projectId = :projectId")
+    suspend fun deleteAll(projectId: Int)
+
     @Query("SELECT * FROM TaskEntity")
     fun getAllNow(): List<TaskEntity>
 

@@ -19,7 +19,7 @@ interface ProjectDao {
 
     @Transaction
     @Query("SELECT * FROM ProjectEntity WHERE id = :projectId")
-    fun getProjectWithTasks(projectId: Int): LiveData<ProjectWithTasksEntity>
+    fun getProjectWithTasks(projectId: Int): LiveData<ProjectWithTasksEntity?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun save(project: ProjectEntity)
@@ -29,6 +29,9 @@ interface ProjectDao {
 
     @Delete
     suspend fun delete(project: ProjectEntity)
+
+    @Query("DELETE FROM ProjectEntity WHERE id = :projectId")
+    suspend fun delete(projectId: Int)
 
     @Query("SELECT * FROM ProjectEntity")
     fun getAllNow(): List<ProjectEntity>

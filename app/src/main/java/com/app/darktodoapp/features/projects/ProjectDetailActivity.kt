@@ -5,16 +5,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.app.darktodoapp.R
 import com.app.darktodoapp.customview.percentOf
 import com.app.darktodoapp.features.tasks.TaskCreatorFragment
 import com.app.darktodoapp.features.tasks.TaskListFragment
 import com.app.darktodoapp.helper.observe
-import com.app.darktodoapp.helper.percent
 import com.app.sdk.models.Project
 import com.app.sdk.repository.ProjectRepository
 import kotlinx.android.synthetic.main.activity_project_detail.*
+import kotlinx.coroutines.launch
 
 class ProjectDetailActivity : AppCompatActivity(R.layout.activity_project_detail) {
 
@@ -44,6 +46,9 @@ class ProjectDetailActivity : AppCompatActivity(R.layout.activity_project_detail
             R.id.item_new_task -> {
                 showTaskCreator(); true
             }
+            R.id.item_delete -> {
+                showDeleteConfirmationDialog(); true
+            }
             android.R.id.home -> {
                 finish(); true
             }
@@ -51,7 +56,11 @@ class ProjectDetailActivity : AppCompatActivity(R.layout.activity_project_detail
         }
     }
 
-    private fun setupView(project: Project) {
+    private fun setupView(project: Project?) {
+        if (project == null) {
+            return finish()
+        }
+
         val tasksCount = project.tasks?.size ?: 0
         val completedTasksCount = project.tasks?.count { it.complete } ?: 0
 
@@ -81,6 +90,27 @@ class ProjectDetailActivity : AppCompatActivity(R.layout.activity_project_detail
     private fun showTaskCreator() {
         val tasksCreatorFragment = TaskCreatorFragment(projectId)
         tasksCreatorFragment.show(supportFragmentManager, null)
+    }
+
+    private fun showDeleteConfirmationDialog() {
+        AlertDialog.Builder(this)
+            .setTitle(R.string.delete_project)
+            .setMessage(R.string.delete_project_confirmation_message)
+            .setNegativeButton(R.string.cancel) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setPositiveButton(R.string.delete) { dialog, _ ->
+                dialog.dismiss()
+                deleteProject()
+            }
+            .create()
+            .show()
+    }
+
+    private fun deleteProject() {
+        lifecycleScope.launch {
+            repo.deleteProject(projectId)
+        }
     }
 }
 
